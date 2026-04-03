@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring Panel | Smart Blood Bank</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="background-color: var(--bg-main);">
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-droplet"></i> BLOOD BANK
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="register.html" class="nav-link">Donor Registration</a>
+                <a href="request.html" class="nav-link">Blood Request</a>
+                <a href="dashboard.html" class="nav-link">Notifications</a>
+                <a href="admin.html" class="nav-link active">Monitoring</a>
+            </div>
+        </nav>
+
+        <main style="padding: 4rem 0;">
+            <div style="margin-bottom: 3rem;">
+                <h1 style="font-size: 2.25rem; margin-bottom: 0.5rem;">Admin / Monitoring Panel</h1>
+                <p style="font-size: 0.9375rem; color: var(--text-muted);">Overview of clinical operational metrics and recent demand cycles.</p>
+            </div>
+
+            <div class="grid grid-3" style="margin-bottom: 4rem;">
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 1px;">Total Donors</div>
+                    <div style="font-size: 2.5rem; font-weight: 800;">12,482</div>
+                    <div style="font-size: 0.75rem; color: var(--success); margin-top: 5px;">+14% from last month</div>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 1px;">Active Donors</div>
+                    <div style="font-size: 2.5rem; font-weight: 800;">3,105</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 5px;"><i class="fa-solid fa-circle dot-active"></i> Online</div>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 1px;">Requests Today</div>
+                    <div style="font-size: 2.5rem; font-weight: 800;">14</div>
+                    <div style="font-size: 0.75rem; color: var(--primary); margin-top: 5px;">4 Critical Pending</div>
+                </div>
+            </div>
+
+            <div class="card" style="padding: 0;">
+                <div style="padding: 2rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="font-size: 1.125rem;">Recent Requests</h3>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" class="input" placeholder="Filter by blood group..." style="padding: 0.5rem 1rem; width: 250px; font-size: 0.8125rem;">
+                        <button class="btn btn-outline" style="padding: 0.5rem 1rem;"><i class="fa-solid fa-filter"></i></button>
+                    </div>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.875rem;">
+                        <thead>
+                            <tr style="background: rgba(255, 255, 255, 0.02); border-bottom: 1px solid var(--border);">
+                                <th style="padding: 1.5rem 2rem; color: var(--text-muted);">ID</th>
+                                <th style="padding: 1.5rem 2rem; color: var(--text-muted);">Blood Group</th>
+                                <th style="padding: 1.5rem 2rem; color: var(--text-muted);">Facility</th>
+                                <th style="padding: 1.5rem 2rem; color: var(--text-muted);">Urgency</th>
+                                <th style="padding: 1.5rem 2rem; color: var(--text-muted);">Contact Number</th>
+                                <th style="padding: 1.5rem 2rem; color: var(--text-muted);">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1.5rem 2rem;">#44201</td>
+                                <td style="padding: 1.5rem 2rem;"><span class="badge badge-red" style="padding: 0.2rem 0.5rem; font-size: 0.65rem;">O- Negative</span></td>
+                                <td style="padding: 1.5rem 2rem;">Royal London Hospital</td>
+                                <td style="padding: 1.5rem 2rem;"><span style="color: var(--primary); font-weight: 700;">Critical</span></td>
+                                <td style="padding: 1.5rem 2rem;">+1 (555) 012-3456</td>
+                                <td style="padding: 1.5rem 2rem;"><span style="color: var(--secondary); opacity: 0.6;">Matching...</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1.5rem 2rem;">#44202</td>
+                                <td style="padding: 1.5rem 2rem;"><span class="badge badge-blue" style="padding: 0.2rem 0.5rem; font-size: 0.65rem; color: var(--warning); background: rgba(250, 204, 21, 0.1);">A+ Positive</span></td>
+                                <td style="padding: 1.5rem 2rem;">St. Mary's Clinic</td>
+                                <td style="padding: 1.5rem 2rem;"><span style="color: var(--warning); font-weight: 700;">Urgent</span></td>
+                                <td style="padding: 1.5rem 2rem;">+1 (555) 987-6543</td>
+                                <td style="padding: 1.5rem 2rem;"><span style="color: var(--success); font-weight: 700;">In Transit</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

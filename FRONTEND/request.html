@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Request | Smart Blood Bank</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="background-color: var(--bg-main);">
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-droplet"></i> BLOOD BANK
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="register.html" class="nav-link">Donor Registration</a>
+                <a href="request.html" class="nav-link active">Blood Request</a>
+                <a href="dashboard.html" class="nav-link">Notifications</a>
+            </div>
+        </nav>
+
+        <main style="max-width: 600px; margin: 0 auto; padding: 4rem 0;">
+            <div class="card" style="padding: 3rem; border-top: 5px solid var(--primary);">
+                <h1 style="font-size: 2.25rem; margin-bottom: 0.5rem;">Request Blood</h1>
+                <p style="font-size: 0.9375rem; color: var(--text-muted); margin-bottom: 2.5rem;">Emergency response active. Real-time dispatcher will begin matching immediately.</p>
+
+                <form id="requestForm">
+                    <div class="form-group">
+                        <label class="label">Target Blood Group</label>
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 5px;">
+                            <div class="badge badge-blue select-group" style="padding: 1rem; cursor: pointer; text-align: center; border: 1px solid var(--border);">A+</div>
+                            <div class="badge badge-blue select-group" style="padding: 1rem; cursor: pointer; text-align: center; border: 1px solid var(--border);">A-</div>
+                            <div class="badge badge-blue select-group" style="padding: 1rem; cursor: pointer; text-align: center; border: 1px solid var(--border);">B+</div>
+                            <div class="badge badge-blue select-group" style="padding: 1rem; cursor: pointer; text-align: center; border: 1px solid var(--border);">B-</div>
+                            <div class="badge badge-blue select-group" style="padding: 1rem; cursor: pointer; text-align: center; border: 1px solid var(--border); background: var(--primary); color: white;">O-</div>
+                            <div class="badge badge-blue select-group" style="padding: 1rem; cursor: pointer; text-align: center; border: 1px solid var(--border);">O+</div>
+                            <div class="badge badge-blue select-group" style="padding: 1rem; cursor: pointer; text-align: center; border: 1px solid var(--border);">AB+</div>
+                            <div class="badge badge-blue select-group" style="padding: 1rem; cursor: pointer; text-align: center; border: 1px solid var(--border);">AB-</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Hospital Name / Clinical Facility</label>
+                        <input type="text" class="input" placeholder="Search Hospital Database..." required>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <div class="form-group">
+                            <label class="label">Units Required (ml)</label>
+                            <input type="number" class="input" placeholder="450" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Contact Number</label>
+                            <input type="tel" class="input" placeholder="+1 (555) 000-0000" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Urgency Level</label>
+                        <div style="display: flex; gap: 10px; margin-top: 5px;">
+                            <div class="triage-btn" style="flex: 1; padding: 0.75rem; border-radius: 8px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; text-align: center; cursor: pointer; background: rgba(34, 197, 94, 0.1); color: var(--success); border: 1px solid rgba(34, 197, 94, 0.2);">Normal</div>
+                            <div class="triage-btn" style="flex: 1; padding: 0.75rem; border-radius: 8px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; text-align: center; cursor: pointer; background: rgba(250, 204, 21, 0.1); color: var(--warning); border: 1px solid rgba(250, 204, 21, 0.2);">Urgent</div>
+                            <div class="triage-btn active" style="flex: 1; padding: 0.75rem; border-radius: 8px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; text-align: center; cursor: pointer; background: var(--primary); color: white; border: 1px solid var(--primary);">Critical</div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; margin-top: 2rem;">
+                        <i class="fa-solid fa-tower-broadcast" style="margin-right: 10px;"></i> Broadcast Emergency Request
+                    </button>
+                    
+                    <div id="searchingFeedback" style="display: none; margin-top: 2rem; text-align: center; color: var(--accent); font-size: 0.8125rem; font-weight: 700; letter-spacing: 1px;">
+                        <i class="fa-solid fa-spinner fa-spin"></i> PRE-SYNCING WITH DONOR NETWORK...
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <style>
+        .triage-btn { transition: all 0.2s; }
+    </style>
+
+    <script>
+        document.querySelectorAll('.select-group').forEach(badge => {
+            badge.addEventListener('click', () => {
+                document.querySelectorAll('.select-group').forEach(b => {
+                    b.style.background = 'rgba(56, 189, 248, 0.1)';
+                    b.style.color = '#38bdf8';
+                });
+                badge.style.background = 'var(--primary)';
+                badge.style.color = 'white';
+            });
+        });
+
+        document.querySelectorAll('.triage-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.triage-btn').forEach(b => {
+                    b.style.background = 'rgba(255, 255, 255, 0.05)';
+                    b.style.color = 'var(--text-muted)';
+                    b.style.borderColor = 'var(--border)';
+                });
+                btn.style.background = 'var(--primary)';
+                btn.style.color = 'white';
+                btn.style.borderColor = 'var(--primary)';
+            });
+        });
+
+        document.getElementById('requestForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const feedback = document.getElementById('searchingFeedback');
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Searching for donors...';
+            btn.style.background = 'var(--accent)';
+            feedback.style.display = 'block';
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

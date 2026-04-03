@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Registration | Smart Blood Bank</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="background-color: var(--bg-main);">
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-droplet"></i> BLOOD BANK
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="register.html" class="nav-link active">Donor Registration</a>
+                <a href="request.html" class="nav-link">Blood Request</a>
+                <a href="dashboard.html" class="nav-link">Notifications</a>
+            </div>
+        </nav>
+
+        <main style="max-width: 600px; margin: 0 auto; padding: 4rem 0;">
+            <div class="card" style="padding: 3rem;">
+                <h1 style="font-size: 2.25rem; margin-bottom: 0.5rem;">Register as a Donor</h1>
+                <p style="font-size: 0.9375rem; color: var(--text-muted); margin-bottom: 2.5rem;">Join a network of lifesavers. Your contribution can save up to three lives.</p>
+
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label class="label">Full Identity</label>
+                        <input type="text" class="input" placeholder="Full Legal Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Digital Anchor (Email)</label>
+                        <input type="email" class="input" placeholder="institution@medical.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Contact Number (WhatsApp)</label>
+                        <input type="tel" class="input" placeholder="+1 (555) 000-0000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Blood Group</label>
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 5px;">
+                            <div class="badge badge-blue select-group" style="padding: 1rem; cursor: pointer; text-align: center; border: 1px solid var(--border);">A+</div>
+                            <div class="badge badge-blue select-group" style="padding: 1rem; cursor: pointer; text-align: center; border: 1px solid var(--border);">A-</div>
+                            <div class="badge badge-blue select-group" style="padding: 1rem; cursor: pointer; text-align: center; border: 1px solid var(--border);">B+</div>
+                            <div class="badge badge-blue select-group" style="padding: 1rem; cursor: pointer; text-align: center; border: 1px solid var(--border);">B-</div>
+                            <div class="badge badge-blue select-group" style="padding: 1rem; cursor: pointer; text-align: center; border: 1px solid var(--border); background: var(--primary); color: white;">O-</div>
+                            <div class="badge badge-blue select-group" style="padding: 1rem; cursor: pointer; text-align: center; border: 1px solid var(--border);">O+</div>
+                            <div class="badge badge-blue select-group" style="padding: 1rem; cursor: pointer; text-align: center; border: 1px solid var(--border);">AB+</div>
+                            <div class="badge badge-blue select-group" style="padding: 1rem; cursor: pointer; text-align: center; border: 1px solid var(--border);">AB-</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 2rem;">
+                        <label class="label" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                            Availability Status 
+                            <span style="font-size: 0.625rem; font-weight: 800; color: var(--success);"><i class="fa-solid fa-circle dot-active"></i> ACTIVE</span>
+                        </label>
+                        <div style="width: 50px; height: 26px; background: var(--success); border-radius: 999px; position: relative; cursor: pointer;">
+                            <div style="position: absolute; right: 4px; top: 3px; width: 20px; height: 20px; background: white; border-radius: 50%;"></div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: flex-start; gap: 12px; margin-top: 2.5rem; margin-bottom: 2.5rem;">
+                        <input type="checkbox" id="consent" style="margin-top: 4px;" required>
+                        <label for="consent" style="font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5;">
+                            I consent to receive urgent <span>WhatsApp notifications</span> during high-stakes emergency matching events.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1rem; box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.2);">
+                        Initialize Donor Profile <i class="fa-solid fa-bolt" style="margin-left: 8px;"></i>
+                    </button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.querySelectorAll('.select-group').forEach(badge => {
+            badge.addEventListener('click', () => {
+                document.querySelectorAll('.select-group').forEach(b => {
+                    b.style.background = 'rgba(56, 189, 248, 0.1)';
+                    b.style.color = '#38bdf8';
+                });
+                badge.style.background = 'var(--primary)';
+                badge.style.color = 'white';
+            });
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Processing...';
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Registration Successful';
+                btn.style.background = 'var(--success)';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
