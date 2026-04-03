@@ -3,92 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notification Dashboard | Smart Blood Bank</title>
+    <title>HEMA-INTEL | Clinical Hub</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body style="background-color: var(--bg-main);">
-    <div class="container">
-        <nav class="navbar">
-            <div class="logo">
-                <i class="fa-solid fa-droplet"></i> BLOOD BANK
-            </div>
-            <div class="nav-links">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="register.html" class="nav-link">Donor Registration</a>
-                <a href="request.html" class="nav-link">Blood Request</a>
-                <a href="dashboard.html" class="nav-link active">Notifications</a>
-            </div>
-            <div style="position: relative; cursor: pointer;">
-                <i class="fa-solid fa-bell" style="font-size: 1.25rem; color: var(--text-muted);"></i>
-                <div style="position: absolute; top: -5px; right: -5px; width: 15px; height: 15px; background: var(--primary); border-radius: 50%; border: 2px solid var(--bg-main); font-size: 0.625rem; font-weight: 800; display: flex; align-items: center; justify-content: center; color: white;">3</div>
-            </div>
+<body>
+    <header class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 2rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem;">
+        <div style="font-weight: 800; color: var(--accent-red); display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-microscope" style="font-size: 1.25rem;"></i> HEMA-INTEL
+        </div>
+        <nav style="display: flex; gap: 2rem; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
+            <a href="dashboard.html" style="color: var(--accent-red); text-decoration: none;">Dashboard</a>
+            <a href="#" style="color: var(--text-secondary); text-decoration: none; opacity: 0.7;">Inventory</a>
+            <a href="#" style="color: var(--text-secondary); text-decoration: none; opacity: 0.7;">Donors</a>
+            <a href="request.html" style="color: var(--text-secondary); text-decoration: none; opacity: 0.7;">Requests</a>
         </nav>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <button class="btn-clinical" style="padding: 0.5rem 1.25rem; font-size: 0.75rem;"><i class="fa-solid fa-bell"></i> Emergency Alert</button>
+            <i class="fa-regular fa-bell" style="color: var(--text-secondary); font-size: 1.25rem; cursor: pointer;"></i>
+            <i class="fa-regular fa-circle-user" style="color: var(--text-secondary); font-size: 1.25rem; cursor: pointer;"></i>
+        </div>
+    </header>
 
-        <main style="padding: 4rem 0;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
-                <div>
-                    <h1 style="font-size: 2.25rem; margin-bottom: 0.5rem;">Clinical Notification Feed</h1>
-                    <p style="font-size: 0.9375rem; color: var(--text-muted);">Monitoring real-time emergency demand across 14 hospital nodes.</p>
+    <main class="container">
+        <!-- Hero Section -->
+        <section style="background: linear-gradient(rgba(7, 9, 17, 0.6), rgba(7, 9, 17, 0.9)), url('https://images.unsplash.com/photo-1519494140681-8b17d830a3e9?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; border-radius: 20px; padding: 6rem; margin-bottom: 4rem; text-align: center; border: 1px solid var(--border-color); position: relative; overflow: hidden;">
+            <div style="background: rgba(234, 51, 35, 0.08); border: 1px solid var(--accent-red); padding: 5px 15px; border-radius: 99px; font-size: 0.625rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; width: fit-content; margin: 0 auto 1.5rem auto;">
+                <i class="fa-solid fa-circle dot-live"></i> Real Time Bio-Response Active
+            </div>
+            <h1 style="font-size: 4.5rem; font-weight: 800; line-height: 1; margin-bottom: 1.5rem;">Save Lives Faster with<br><span style="color: var(--text-primary);">Smart Blood Matching</span></h1>
+            <p style="color: var(--text-secondary); max-width: 650px; margin: 0 auto 3rem auto; font-size: 1.25rem; line-height: 1.5;">Harnessing high-fidelity medical intelligence to bridge the gap between emergency demand and life-saving donors through a real-time clinical notification system.</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center;">
+                <a href="request.html" class="btn-clinical" style="padding: 1.25rem 2.5rem; font-size: 1rem;">Request Life-Support</a>
+                <a href="register.html" class="btn-secondary" style="padding: 1.25rem 2.5rem; font-size: 1rem;">Register as Guardian</a>
+            </div>
+        </section>
+
+        <!-- Quick Orchestration -->
+        <section style="margin-bottom: 6rem;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 2.5rem;">
+                <h2 style="font-size: 2rem; font-weight: 800;">Quick Orchestration</h2>
+                <div style="font-size: 0.75rem; font-weight: 900; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 2px;">Node Cluster: Alpha-01</div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 350px 1fr 300px; gap: 2rem;">
+                <!-- Stock Criticality -->
+                <div class="glass-card">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 2rem;">
+                        <span class="label-clinical">Stock Criticality</span>
+                        <i class="fa-solid fa-asterisk" style="color: var(--accent-red); opacity: 0.5;"></i>
+                    </div>
+                    
+                    <div style="background: rgba(234, 51, 35, 0.1); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; border: 1px solid rgba(234, 51, 35, 0.2);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                            <h3 style="font-size: 1.1rem; font-weight: 800;">O- Negative</h3>
+                            <span style="font-size: 1.75rem; font-weight: 900; color: var(--accent-red);">08%</span>
+                        </div>
+                        <div style="font-size: 0.625rem; font-weight: 900; color: var(--accent-red); text-transform: uppercase; letter-spacing: 1px;">Critical Depletion</div>
+                    </div>
+
+                    <div style="padding: 1rem; border-radius: 12px; margin-bottom: 1rem; border: 1px solid var(--border-color);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                            <span style="font-weight: 800; font-size: 1rem;">A+ Positive</span>
+                            <span style="font-size: 1.2rem; font-weight: 900; color: #4ade80;">84%</span>
+                        </div>
+                        <div style="font-size: 0.625rem; font-weight: 900; color: #4ade80; text-transform: uppercase; letter-spacing: 1px;">Stable Capacity</div>
+                    </div>
+
+                    <div style="padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                            <span style="font-weight: 800; font-size: 1rem;">B- Negative</span>
+                            <span style="font-size: 1.2rem; font-weight: 900; color: var(--accent-blue);">42%</span>
+                        </div>
+                        <div style="font-size: 0.625rem; font-weight: 900; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 1px;">Nominal Stock</div>
+                    </div>
                 </div>
-                <div class="badge badge-green" style="display: inline-flex; align-items: center; gap: 8px;">
-                    <i class="fa-solid fa-circle dot-active" style="display: inline-block;"></i> Real-time Feed Active
+
+                <!-- Live Dispatch Map -->
+                <div class="glass-card" style="padding: 0; position: relative;">
+                    <div style="position: absolute; top: 1.5rem; left: 1.5rem; z-index: 10;">
+                        <span class="label-clinical">Live Dispatch</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 800;">Metropolitan Transit Active</h3>
+                    </div>
+                    <div style="position: absolute; top: 1.5rem; right: 1.5rem; z-index: 10;">
+                        <span class="badge-surgical" style="background: white; color: black;">Map: London-E1</span>
+                    </div>
+                    <div style="width: 100%; height: 100%; background: url('https://user-images.githubusercontent.com/13155700/69022646-608f6580-096d-11ea-8ba0-0b6dc3261a8f.png') center cover; opacity: 0.3; border-radius: 12px;"></div>
+                    <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; right: 1.5rem; z-index: 10;">
+                        <div class="glass-card" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: rgba(18, 22, 35, 0.95);">
+                            <div style="background: var(--accent-red); width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-solid fa-truck-medical" style="color: white;"></i>
+                            </div>
+                            <div>
+                                <p style="font-size: 0.625rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Headline: St. Thomas Hospital</p>
+                                <p style="font-size: 0.75rem; font-weight: 800;">ESTIMATED ARRIVAL: 4M 12S</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Network Sync Stats -->
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    <div class="glass-card" style="flex: 1;">
+                        <span class="label-clinical">Network Sync</span>
+                        <div style="font-size: 2.5rem; font-weight: 900; color: var(--accent-blue); margin: 0.5rem 0;">12ms</div>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4;">Active Biometrics validation active across 14 hospital nodes.</p>
+                        <div style="display: flex; gap: 4px; align-items: flex-end; height: 30px; margin-top: 1rem;">
+                            <div style="height: 40%; width: 20%; background: var(--accent-blue); opacity: 0.3; border-radius: 2px;"></div>
+                            <div style="height: 60%; width: 20%; background: var(--accent-blue); opacity: 0.5; border-radius: 2px;"></div>
+                            <div style="height: 90%; width: 20%; background: var(--accent-blue); border-radius: 2px;"></div>
+                            <div style="height: 50%; width: 20%; background: var(--accent-blue); opacity: 0.6; border-radius: 2px;"></div>
+                        </div>
+                    </div>
+                    <div class="glass-card" style="flex: 1;">
+                        <span class="label-clinical">Guardians Online</span>
+                        <div style="font-size: 2.5rem; font-weight: 900; color: white; margin: 0.5rem 0;">1,204</div>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4;">Ready for immediate clinical response dispatch.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Log -->
+        <section style="margin-bottom: 8rem;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 2.5rem;">
+                <h2 style="font-size: 2rem; font-weight: 800;">Recent Clinical Events</h2>
+                <div style="width: 300px; height: 2px; background: var(--border-color); align-self: flex-start; margin-top: 1.5rem;">
+                    <div style="width: 30%; height: 100%; background: var(--accent-red);"></div>
                 </div>
             </div>
 
-            <div class="grid grid-3" id="notifFeed">
-                <!-- Notification 1 -->
-                <div class="card notif-card" style="border-left: 4px solid var(--primary);">
-                    <div class="notif-header">
-                        <span class="badge badge-red" style="font-size: 0.875rem;">O- Negative</span>
-                        <span class="badge badge-blue">New</span>
-                    </div>
-                    <p style="font-size: 0.9375rem; margin-bottom: 1.5rem; font-weight: 500;">Critical demand for O- Negative blood at Royal London Hospital. Immediate response needed.</p>
-                    <div style="border-top: 1px solid var(--border); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8125rem;">
-                        <div style="color: var(--text-muted);">
-                            <i class="fa-solid fa-phone" style="margin-right: 6px;"></i> +1 (555) 012-3456
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <!-- Event 1 -->
+                <div class="glass-card" style="display: flex; align-items: center; justify-content: space-between;">
+                    <div style="display: flex; align-items: center; gap: 2rem;">
+                        <div style="width: 50px; height: 50px; background: rgba(234, 51, 35, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: var(--accent-red);">!</div>
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
+                                <span class="badge-surgical">Target Request</span>
+                                <span style="font-size: 0.625rem; color: var(--text-secondary);">Case #748-K121</span>
+                            </div>
+                            <h4 style="font-size: 1rem;">AB+ Plasma Required • Royal London Hospital</h4>
+                            <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 3px;">Emergency bypass protocols initiated. 4 matching donors notified.</p>
                         </div>
-                        <div style="color: var(--text-muted); text-transform: uppercase;">2 Min Ago</div>
                     </div>
-                </div>
-
-                <!-- Notification 2 -->
-                <div class="card notif-card" style="border-left: 4px solid var(--warning);">
-                    <div class="notif-header">
-                        <span class="badge badge-blue" style="font-size: 0.875rem; color: var(--warning); background: rgba(250, 204, 21, 0.1);">A+ Positive</span>
-                        <span class="badge">Seen</span>
-                    </div>
-                    <p style="font-size: 0.9375rem; margin-bottom: 1.5rem; font-weight: 500;">Demand for A+ Positive units at St. Mary's Clinic. Logistics cycle initiated.</p>
-                    <div style="border-top: 1px solid var(--border); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8125rem;">
-                        <div style="color: var(--text-muted);">
-                            <i class="fa-solid fa-phone" style="margin-right: 6px;"></i> +1 (555) 987-6543
-                        </div>
-                        <div style="color: var(--text-muted); text-transform: uppercase;">18 Min Ago</div>
-                    </div>
-                </div>
-
-                <!-- Notification 3 -->
-                <div class="card notif-card" style="border-left: 4px solid var(--primary);">
-                    <div class="notif-header">
-                        <span class="badge badge-red" style="font-size: 0.875rem;">B- Negative</span>
-                        <span class="badge badge-blue">New</span>
-                    </div>
-                    <p style="font-size: 0.9375rem; margin-bottom: 1.5rem; font-weight: 500;">Emergency transfer of B- Negative blood required at Chelsea Medical Center.</p>
-                    <div style="border-top: 1px solid var(--border); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8125rem;">
-                        <div style="color: var(--text-muted);">
-                            <i class="fa-solid fa-phone" style="margin-right: 6px;"></i> +1 (555) 444-2222
-                        </div>
-                        <div style="color: var(--text-muted); text-transform: uppercase;">32 Min Ago</div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 0.75rem; font-weight: 800; margin-bottom: 4px;">2 Minutes Ago</div>
+                        <div style="font-size: 0.625rem; color: var(--accent-red); font-weight: 900; text-transform: uppercase;">Matching Underway</div>
                     </div>
                 </div>
             </div>
-        </main>
-    </div>
-
-    <!-- Floating action notification icon (from spec) -->
-    <div style="position: fixed; bottom: 30px; right: 30px; width: 64px; height: 64px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.4); cursor: pointer; transition: 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-        <i class="fa-solid fa-bell" style="color: white; font-size: 1.5rem;"></i>
-        <div style="position: absolute; top: 0; right: 0; width: 22px; height: 22px; background: var(--success); border-radius: 50%; border: 4px solid var(--bg-main); display: flex; align-items: center; justify-content: center; font-size: 0.625rem; font-weight: 800; color: white;">!</div>
-    </div>
+        </section>
+    </main>
 </body>
 </html>

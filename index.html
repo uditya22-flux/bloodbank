@@ -3,55 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Blood Bank | Save Lives Faster</title>
+    <title>HEMA-INTEL | Access Terminal</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <div class="container">
-        <nav class="navbar">
-            <div class="logo">
-                <i class="fa-solid fa-droplet"></i> BLOOD BANK
+<body style="min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;">
+    <!-- Branding Section (Right Side from screenshot) -->
+    <div style="background: linear-gradient(rgba(7, 9, 17, 0.9), rgba(7, 9, 17, 0.9)), url('https://images.unsplash.com/photo-1579165466541-74e2b493e159?q=80&w=2070&auto=format&fit=crop'); background-size: cover; display: flex; flex-direction: column; justify-content: space-between; padding: 4rem;">
+        <div style="display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.25rem;">
+            <div style="background: var(--accent-red); width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <i class="fa-solid fa-microscope" style="color: white; font-size: 1.25rem;"></i>
             </div>
-            <div class="nav-links">
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="register.html" class="nav-link">Donor Registration</a>
-                <a href="request.html" class="nav-link">Blood Request</a>
-                <a href="dashboard.html" class="nav-link">Notifications</a>
-                <a href="admin.html" class="nav-link">Monitoring</a>
+            HEMA-INTEL
+        </div>
+        
+        <div>
+            <h1 style="font-size: 5rem; font-weight: 800; line-height: 0.95; margin-bottom: 2rem;">Precision<br>Intelligence for<br><span style="color: var(--accent-red);">Critical</span><br>Hematology.</h1>
+            <p style="color: var(--text-secondary); max-width: 500px; font-size: 1.125rem; line-height: 1.6;">The Clinical Curator provides a sophisticated environment for blood bank logistics and real-time medical data synthesis.</p>
+            <div style="display: flex; gap: 10px; margin-top: 3rem;">
+                <div style="width: 40px; height: 5px; background: var(--accent-red); border-radius: 999px;"></div>
+                <div style="width: 15px; height: 5px; background: rgba(255, 255, 255, 0.1); border-radius: 999px;"></div>
+                <div style="width: 15px; height: 5px; background: rgba(255, 255, 255, 0.1); border-radius: 999px;"></div>
             </div>
-        </nav>
+        </div>
 
-        <section class="hero" style="text-align: center; padding: 6rem 0;">
-            <h1 style="font-size: 4rem; line-height: 1.1; margin-bottom: 2rem;">Save Lives Faster with<br><span style="color: var(--primary);">Smart Blood Matching</span></h1>
-            <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; margin-bottom: 3rem;">A real-time emergency response system connecting hospitals with life-saving donors through instantaneous notifications and intelligent blood matching.</p>
-            <div style="display: flex; gap: 1.5rem; justify-content: center;">
-                <a href="register.html" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Register as Donor</a>
-                <a href="request.html" class="btn btn-outline" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Request Blood</a>
-            </div>
-        </section>
-
-        <section class="trust-indicators grid grid-3" style="margin-top: 4rem; text-align: center; border-top: 1px solid var(--border); padding-top: 5rem;">
-            <div class="indicator">
-                <i class="fa-solid fa-bolt" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1.5rem;"></i>
-                <h3 style="margin-bottom: 1rem;">Lightning Fast</h3>
-                <p style="color: var(--text-muted); font-size: 0.9375rem;">Instant notifications via WhatsApp ensuring responders are notified in milliseconds.</p>
-            </div>
-            <div class="indicator">
-                <i class="fa-solid fa-shield-halved" style="font-size: 2.5rem; color: var(--success); margin-bottom: 1.5rem;"></i>
-                <h3 style="margin-bottom: 1rem;">Clinically Trusted</h3>
-                <p style="color: var(--text-muted); font-size: 0.9375rem;">Verified donor screening and high-precision matching at high-care grade security.</p>
-            </div>
-            <div class="indicator">
-                <i class="fa-solid fa-clock-rotate-left" style="font-size: 2.5rem; color: var(--warning); margin-bottom: 1.5rem;"></i>
-                <h3 style="margin-bottom: 1rem;">24/7 Availability</h3>
-                <p style="color: var(--text-muted); font-size: 0.9375rem;">A global network of active donors ready for immediate emergency clinical response.</p>
-            </div>
-        </section>
-
-        <footer style="margin-top: 8rem; padding: 4rem 0; text-align: center; border-top: 1px solid var(--border); font-size: 0.8125rem; color: var(--text-muted);">
-            <p>© 2024 Smart Blood Bank Notification System. Healthcare-Grade Professionalism.</p>
-        </footer>
+        <div style="font-size: 0.75rem; color: var(--text-secondary); display: flex; gap: 2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+            <div style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-shield-check" style="color: var(--accent-red);"></i> SECURE PROTOCOL 4.0</div>
+            <div>CLASS AA COMPLIANCE</div>
+        </div>
     </div>
+
+    <!-- Login Form Section (Left Side from screenshot) -->
+    <div style="padding: 6rem; display: flex; flex-direction: column; justify-content: center; background: #0b0d18;">
+        <div style="max-width: 440px; margin: 0 auto; width: 100%;">
+            <header style="margin-bottom: 3.5rem;">
+                <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px;">Access Terminal</h2>
+                <p style="color: var(--text-secondary); font-size: 1.125rem;">Initialize your clinical profile to continue.</p>
+            </header>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; background: rgba(255, 255, 255, 0.03); border-radius: 12px; padding: 6px; margin-bottom: 3rem; border: 1px solid var(--border-color);">
+                <button style="background: rgba(255, 255, 255, 0.05); color: white; border: none; padding: 0.75rem; border-radius: 8px; font-weight: 700; cursor: pointer;">Sign Up</button>
+                <button style="background: transparent; color: var(--text-secondary); border: none; padding: 0.75rem; border-radius: 8px; font-weight: 700; cursor: pointer;">Log In</button>
+            </div>
+
+            <form id="loginForm">
+                <div style="margin-bottom: 2rem;">
+                    <label class="label-clinical">Full Identity</label>
+                    <div style="position: relative;">
+                        <i class="fa-solid fa-address-card" style="position: absolute; left: 1rem; top: 1.15rem; color: var(--text-secondary);"></i>
+                        <input type="text" class="terminal-input" placeholder="Full Legal Name" style="padding-left: 3.5rem;" required>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <label class="label-clinical">Digital Anchor (Email)</label>
+                    <div style="position: relative;">
+                        <i class="fa-solid fa-at" style="position: absolute; left: 1rem; top: 1.15rem; color: var(--text-secondary);"></i>
+                        <input type="email" class="terminal-input" placeholder="institution@hema-intel.med" style="padding-left: 3.5rem;" required>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label class="label-clinical">Security Credentials (Password)</label>
+                    <div style="position: relative;">
+                        <i class="fa-solid fa-key" style="position: absolute; left: 1rem; top: 1.15rem; color: var(--text-secondary);"></i>
+                        <input type="password" class="terminal-input" placeholder="••••••••••••" style="padding-left: 3.5rem;" required>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 2.5rem;">
+                    <div style="width: 100%; height: 5px; background: rgba(255, 255, 255, 0.05); border-radius: 999px; position: relative; overflow: hidden;">
+                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 75%; background: #4ade80;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; margin-top: 8px; font-size: 0.625rem; font-weight: 900; color: #4ade80; text-transform: uppercase;">Strong Entropy</div>
+                </div>
+
+                <div style="display: flex; align-items: start; gap: 12px; margin-bottom: 3rem;">
+                    <input type="checkbox" style="margin-top: 4px;" required>
+                    <p style="font-size: 0.75rem; line-height: 1.4; color: var(--text-secondary);">I acknowledge the <span style="font-weight: 800; color: white;">Emergency Protocols</span> and data privacy regulations governing Clinical Curator activities.</p>
+                </div>
+
+                <button type="submit" class="btn-clinical" style="margin-bottom: 2.5rem;">Initialize Profile <i class="fa-solid fa-arrow-right"></i></button>
+
+                <div style="text-align: center; color: var(--text-secondary); font-size: 0.625rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 2.5rem; position: relative;">
+                    <span style="background: #0b0d18; padding: 0 1rem; z-index: 10; position: relative;">Federated Access</span>
+                    <div style="position: absolute; top: 50%; width: 100%; height: 1px; background: var(--border-color); left: 0;"></div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 4rem;">
+                    <button class="btn-secondary"><i class="fa-brands fa-google" style="margin-right: 10px;"></i> Medical ID</button>
+                    <button class="btn-secondary"><i class="fa-solid fa-fingerprint" style="margin-right: 10px;"></i> Biometrics</button>
+                </div>
+            </form>
+
+            <footer style="text-align: center; font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; display: flex; justify-content: center; gap: 2rem;">
+                <a href="#" style="color: inherit; text-decoration: none; opacity: 0.7;">Emergency Protocols</a>
+                <a href="#" style="color: inherit; text-decoration: none; opacity: 0.7;">Contact Laboratory</a>
+                <a href="#" style="color: inherit; text-decoration: none; opacity: 0.7;">Legal Compliance</a>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> PRE-SYNCING...';
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
